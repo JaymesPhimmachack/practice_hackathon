@@ -1,0 +1,201 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+input {
+  display: none;
+}
+
+.section {
+  height: 500px;
+}
+
+.section h1 {
+  text-align: center;
+}
+
+
+
+
+/* Static Popover ========*/
+
+.button{
+  cursor: pointer;
+  display: block;
+  width:7%;
+  padding: 20px 100px;
+  text-align: center;
+  margin:5px;
+  margin-left: 120px;
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.button + input{
+  display: none;
+}
+.button + input + div{
+  display:none;
+  float:left
+}
+.button + input:checked + div{
+  display:block;
+}
+.popover {
+  height: 100px;
+  width: 300px;
+  position: absolute;
+  top: 200px;
+  left: 100px;
+  background: lightblue;
+  
+}
+
+.popover:after {
+  content: " ";
+  border-bottom: 11px solid lightblue;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+  position: relative;
+  top: -29px;
+  right: -43px;
+  
+}
+
+/* Collapsible ========*/
+
+.wrapper {
+  margin: 50px auto;
+  width: 500px;
+}
+
+.collapse{
+  cursor: pointer;
+  display: block;
+  background-color: grey;
+  width: 100%;
+  
+}
+.collapse + input{
+  display: none;
+}
+.collapse + input + div{
+  display:none;
+  margin:5px;
+  width: 20%;
+  background-color: lightblue;
+
+}
+.collapse + input:checked + div{
+  display:block;
+}
+
+
+
+/* Dropdown ========*/
+
+
+.wrap {
+  
+  position: relative;
+  top: 50px;
+  left: 200px;
+}
+
+
+.drop-down-button {
+  border-radius: 5px;
+  background-color: #26a69a;
+  color: #fff;
+  padding: 20px 38px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dropdown li {
+  list-style: none;
+  width: 120px;
+  padding: 10px;
+  
+}
+.dropdown  {
+  border: 1px solid #444;
+  width: 140px;
+  margin: 0 20px;
+  display: none;
+  position: absolute;
+  top: -18px;
+  left: -24px; 
+  background-color: #fff;
+}
+
+.dropdown a {
+  text-decoration: none;
+  color: #26a69a;
+}
+
+.divider {
+  border-bottom: 1px solid #444;
+}
+
+.wrap input:checked ~ label .dropdown {
+  display: block;
+}
+
+
+/* Material Box ========*/
+
+
+
+.img-container {
+  width: 300px;
+  height: 300px;
+  margin: 200px auto;
+  transition: transform 0.5s;
+
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+}
+
+
+.box {
+  position: relative;
+}
+
+ .mask {
+ width: 100%;
+ height: 800px;
+ background-color: #000;
+ position: absolute;
+ top: 0;
+ left: 0;
+  visibility: hidden;
+ z-index: -1;
+  transition: visibility 0.5s; 
+}
+
+.img-container:hover {
+  cursor: zoom-in;
+}
+
+.box input:checked + label .img-container {
+  transform: scale(2,2);
+}
+
+.box input:checked + label .img-container:hover {
+  cursor: zoom-out;
+  
+}
+
+.box input:checked ~ .mask {
+  visibility: visible;
+}
